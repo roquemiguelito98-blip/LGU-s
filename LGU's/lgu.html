@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LGU's Live Monitoring</title>
+    <link rel="stylesheet" href="lgu.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Sidebar Menu -->
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-content">
+            <div class="sidebar-header">
+                <img src="munisipyo-removebg-preview.png" alt="Logo" class="sidebar-logo" onerror="this.style.display='none'">
+                <h2 class="sidebar-title">LGU's Live Monitoring</h2>
+            </div>
+            
+            <nav class="sidebar-nav">
+                <a href="#" class="sidebar-link active" data-page="home">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <path d="M3 9L12 2L21 9V20C21 20.5304 20.7893 21.0391 20.4142 21.4142C20.0391 21.7893 19.5304 22 19 22H5C4.46957 22 3.96086 21.7893 3.58579 21.4142C3.21071 21.0391 3 20.5304 3 20V9Z" stroke="#1E1E1E" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <span>Home</span>
+                </a>
+                
+                <a href="#" class="sidebar-link" data-page="about">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <path d="M12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2Z" stroke="#1E1E1E" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M12 16V12M12 8H12.01" stroke="#1E1E1E" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <span>About</span>
+                </a>
+                
+                <a href="#" class="sidebar-link" data-page="statistics">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <path d="M3 3V18C3 18.5304 3.21071 19.0391 3.58579 19.4142C3.96086 19.7893 4.46957 20 5 20H21M7 16L12 11L16 15L21 10" stroke="#1E1E1E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <span>Statistics</span>
+                </a>
+                
+                <a href="#" class="sidebar-link" data-page="emergency">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <path d="M4 15L9 20L20 9" stroke="#1E1E1E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <span>Emergency</span>
+                </a>
+                
+                <a href="#" class="sidebar-link" data-page="information">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <circle cx="12" cy="12" r="10" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M12 16V12M12 8H12.01" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <span>Information</span>
+                </a>
+                
+                <a href="#" class="sidebar-link" data-page="settings">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <circle cx="12" cy="12" r="3" stroke="#1E1E1E" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M12 1V3M12 21V23M4.22 4.22L5.64 5.64M18.36 18.36L19.78 19.78M1 12H3M21 12H23M4.22 19.78L5.64 18.36M18.36 5.64L19.78 4.22" stroke="#1E1E1E" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <span>Settings</span>
+                </a>
+            </nav>
+        </div>
+    </aside>
+
+    <!-- Main Container -->
+    <div class="main-container">
+        <!-- Page: Dashboard (Home) -->
+        <div class="page active" id="page-home">
+            <div class="dashboard">
+                <!-- Header -->
+                <div class="header">
+                    <div class="menu-icon" id="menuToggle">
+                        <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+                            <path d="M1.75 11.75H31.75M1.75 1.75H31.75M1.75 21.75H31.75" stroke="#1E1E1E" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" transform="translate(4, 9)"/>
+                        </svg>
+                    </div>
+                    
+                    <div class="logo">
+                        <img src="munisipyo-removebg-preview.png" alt="Municipality Logo" onerror="this.style.display='none'">
+                    </div>
+                    <p class="header-title">LGU's Live Monitoring</p>
+                    <nav class="nav-menu" id="navMenu">
+                        <a href="#" class="nav-link" data-page="home">Home</a>
+                        <a href="#" class="nav-link" data-page="about">About</a>
+                        <a href="#" class="nav-link" data-page="statistics">Statistics</a>
+                        <a href="#" class="nav-link" data-page="emergency">Emergency</a>
+                        <a href="#" class="nav-link" data-page="information">Information</a>
+                    </nav>
+                </div>
+
+                <!-- Main Content -->
+                <div class="main-content">
+                    <div class="header-section">
+                        <div class="title-container">
+                            <h1 class="main-title">LGU Governance & Tourism Dashboard</h1>
+                            <p class="main-subtitle">Monitoring Digital Adoption & Impact</p>
+                        </div>
+                        </button>
+                    </div>
+
+                    <!-- Metrics Cards -->
+                    <div class="metrics-container">
+                        <div class="metric-card">
+                            <h3 class="metric-title"><i class="fa-solid fa-chart-line"></i> Tourism Revenue</h3>
+                            <p class="metric-value" id="tourism-revenue-val">0%</p>
+                            <p class="metric-description">Growth vs Last Year</p>
+                        </div>
+
+                        <div class="metric-card">
+                            <h3 class="metric-title"><i class="fa-solid fa-gear"></i> Admin Efficiency</h3>
+                            <p class="metric-value" id="admin-efficiency-val">0%</p>
+                            <p class="metric-description">Operational Cost Savings</p>
+                        </div>
+
+                        <div class="metric-card">
+                            <h3 class="metric-title"><i class="fa-solid fa-eye"></i> Transparency Score</h3>
+                            <p class="metric-value" id="transparency-score-val">0%</p>
+                            <p class="metric-description">Data Accuracy Rating</p>
+                        </div>
+                    </div>
+
+                    <!-- Recent Digital Transactions Table -->
+                    <div class="transactions-section">
+                        <h2 class="transactions-title">Recent Digital Transactions</h2>
+                        
+                        <div class="table-container">
+                            <table class="transactions-table">
+                                <thead>
+                                    <tr>
+                                        <th>Service Type</th>
+                                        <th>Status</th>
+                                        <th>Efficiency Gain</th>
+                                        <th>Date</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="transactions-body">
+                                    <tr>
+                                        <td>Tourism Fee Collection</td>
+                                        <td><span class="badge badge-green">Fully Digital</span></td>
+                                        <td>0% Transparency</td>
+                                        <td>N/A</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Business Permit</td>
+                                        <td><span class="badge badge-blue">Digital Adoption</span></td>
+                                        <td>0% Faster</td>
+                                        <td>N/A</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Environmental User Fees (EUF)</td>
+                                        <td><span class="badge badge-green">Fully Digital</span></td>
+                                        <td>0% Revenue Increase</td>
+                                        <td>N/A</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Hotel/Restaurant Booking</td>
+                                        <td><span class="badge badge-blue">Integrated</span></td>
+                                        <td>Local Reach</td>
+                                        <td>N/A</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Tourism Statistics</td>
+                                        <td><span class="badge badge-green">Fully Digital</span></td>
+                                        <td>0% Statistics</td>
+                                        <td>N/A</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Revenue Tracking</td>
+                                        <td><span class="badge badge-blue">Integrated</span></td>
+                                        <td>0% Tracking</td>
+                                        <td>N/A</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Tourist Arrivals</td>
+                                        <td><span class="badge badge-green">Fully Digital</span></td>
+                                        <td>0% Arrivals</td>
+                                        <td>N/A</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Booking</td>
+                                        <td><span class="badge badge-blue">Integrated</span></td>
+                                        <td>0% Booking</td>
+                                        <td>N/A</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="action-buttons">
+                            <button id="btnGenerateReport" class="btn btn-generate">
+                                <i class="fa-solid fa-file-export"></i> Generate Report
+                            </button>
+                            <button id="btnDeleteReport" class="btn btn-delete">
+                                <i class="fa-solid fa-trash-can"></i> Delete Report
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Page: About -->
+        <div class="page" id="page-about">
+            <div class="about-page">
+                <div class="header">
+                    <div class="menu-icon">
+                        <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+                            <path d="M1.75 11.75H31.75M1.75 1.75H31.75M1.75 21.75H31.75" stroke="#1E1E1E" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" transform="translate(4, 9)"/>
+                        </svg>
+                    </div>
+                    
+                    <div class="logo">
+                        <img src="munisipyo-removebg-preview.png" alt="Logo" onerror="this.style.display='none'">
+                    </div>
+                    
+                    <p class="header-title">LGU's Live Monitoring</p>
+                    
+                    <nav class="nav-menu">
+                        <a href="#" class="nav-link" data-page="home">Home</a>
+                        <a href="#" class="nav-link" data-page="about">About</a>
+                        <a href="#" class="nav-link" data-page="statistics">Statistics</a>
+                        <a href="#" class="nav-link" data-page="emergency">Emergency</a>
+                        <a href="#" class="nav-link" data-page="information">Information</a>
+                    </nav>
+                </div>
+
+                <div class="about-content">
+                    <div class="about-hero">
+                        <h1 class="about-title">About LGU's Live Monitoring</h1>
+                        <p class="about-description">The LGU Live Monitoring system is dedicated to ensuring the safety and order of our community. Through real-time surveillance and proactive data tracking, we provide swift responses to emergencies, traffic incidents, and security concerns to protect every citizen.</p>
+                    </div>
+
+                    <h2 class="values-title">Our Values</h2>
+
+                    <div class="values-scroll">
+                        <div class="value-card">
+                            <h3><i class="fa-solid fa-chart-line"></i> Tourism Revenue</h3>
+                            <p>Every traveler counts, every visit builds.</p>
+                        </div>
+                        <div class="value-card">
+                            <h3><i class="fa-solid fa-gear"></i> Admin Efficiency</h3>
+                            <p>Sending a Calendly link for the guest to pick a slot.</p>
+                        </div>
+                        <div class="value-card">
+                            <h3><i class="fa-solid fa-eye"></i> Transparency Score</h3>
+                            <p>A lack of transparency results in distrust and a deep sense of insecurity.</p>
+                        </div>
+                        <div class="value-card">
+                            <h3><i class="fa-solid fa-chart-bar"></i> Tourism Revenue</h3>
+                            <p>Invest in the destination, and the destination will invest in you.</p>
+                        </div>
+                        <div class="value-card">
+                            <h3><i class="fa-solid fa-chart-pie"></i> Tourism Stats</h3>
+                            <p>Knowledge is the best souvenir: Analyzing trends to shape experiences.</p>
+                        </div>
+                        <div class="value-card">
+                            <h3><i class="fa-solid fa-coins"></i> Revenue Tracking</h3>
+                            <p>Honesty in numbers is the bedrock of business.</p>
+                        </div>
+                        <div class="value-card">
+                            <h3><i class="fa-solid fa-calendar-check"></i> Booking</h3>
+                            <p>The journey of a thousand miles begins with a single click.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Page: Statistics -->
+        <div class="page" id="page-statistics">
+    <div class="statistics-page">
+        <div class="header">
+            <div class="menu-icon">
+                <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+                    <path d="M1.75 11.75H31.75M1.75 1.75H31.75M1.75 21.75H31.75" stroke="#1E1E1E" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" transform="translate(4, 9)"/>
+                </svg>
+            </div>
+            <div class="logo">
+                <img src="munisipyo-removebg-preview.png" alt="Logo" onerror="this.style.display='none'">
+            </div>
+            <p class="header-title">LGU's Live Monitoring</p>
+            <nav class="nav-menu">
+                <a href="#" class="nav-link" data-page="home">Home</a>
+                <a href="#" class="nav-link" data-page="about">About</a>
+                <a href="#" class="nav-link" data-page="statistics">Statistics</a>
+                <a href="#" class="nav-link" data-page="emergency">Emergency</a>
+                <a href="#" class="nav-link" data-page="information">Information</a>
+            </nav>
+        </div>
+
+        <div class="stats-content">
+            <h1 class="stats-title">Statistics of Month</h1>
+            <p class="stats-subtitle">Monitoring Digital Adoption & Impact</p>
+
+            <div class="month-selector">
+                <select id="monthSelect" class="month-dropdown">
+                    <option value="Select">--Select--</option>
+                    <option value="January">January</option>
+                    <option value="February">February</option>
+                    <option value="March">March</option>
+                    <option value="April">April</option>
+                    <option value="May">May</option>
+                    <option value="June">June</option>
+                    <option value="July">July</option>
+                    <option value="August">August</option>
+                    <option value="September">September</option>
+                    <option value="October">October</option>
+                    <option value="November">November</option>
+                    <option value="December">December</option>
+                </select>
+            </div>
+
+            <div class="stats-filter">
+                <button class="filter-btn active"><i class="fa-solid fa-chart-line"></i> Tourism Revenue</button>
+                <button class="filter-btn"><i class="fa-solid fa-gear"></i> Admin Efficiency</button>
+                <button class="filter-btn"><i class="fa-solid fa-eye"></i> Transparency Score</button>
+                <button class="filter-btn"><i class="fa-solid fa-chart-pie"></i> Tourism Stats</button>
+                <button class="filter-btn"><i class="fa-solid fa-coins"></i> Revenue Tracking</button>
+                <button class="filter-btn"><i class="fa-solid fa-flag"></i> Tourist Arrivals</button>
+                <button class="filter-btn"><i class="fa-solid fa-calendar-check"></i> Booking</button>
+            </div>
+
+            <div class="stats-chart-container">
+                <div class="stats-chart active" id="chart-revenue">
+                    <h2>Tourism Revenue</h2>
+                    <canvas id="canvas-revenue"></canvas>
+                </div>
+                <div class="stats-chart" id="chart-admin">
+                    <h2>Admin Efficiency</h2>
+                    <canvas id="canvas-admin"></canvas>
+                </div>
+                <div class="stats-chart" id="chart-transparency">
+                    <h2>Transparency Score</h2>
+                    <canvas id="canvas-transparency"></canvas>
+                </div>
+                <div class="stats-chart" id="chart-tourism">
+                    <h2>Tourism Stats</h2>
+                    <canvas id="canvas-tourism"></canvas>
+                </div>
+                <div class="stats-chart" id="chart-tracking">
+                    <h2>Revenue Tracking</h2>
+                    <canvas id="canvas-tracking"></canvas>
+                </div>
+                <div class="stats-chart" id="chart-arrivals">
+                    <h2>Tourist Arrivals</h2>
+                    <canvas id="canvas-arrivals"></canvas>
+                </div>
+                <div class="stats-chart" id="chart-booking">
+                    <h2>Booking</h2>
+                    <canvas id="canvas-booking"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+        <!-- Page: Emergency -->
+        <div class="page" id="page-emergency">
+            <div class="emergency-page">
+                <div class="header">
+                    <div class="menu-icon">
+                        <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+                            <path d="M1.75 11.75H31.75M1.75 1.75H31.75M1.75 21.75H31.75" stroke="#1E1E1E" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" transform="translate(4, 9)"/>
+                        </svg>
+                    </div>
+                    <div class="logo">
+                        <img src="munisipyo-removebg-preview.png" alt="Logo">
+                    </div>
+                    <p class="header-title">LGU's Live Monitoring</p>
+                    <nav class="nav-menu">
+                        <a href="#" class="nav-link" data-page="home">Home</a>
+                        <a href="#" class="nav-link" data-page="about">About</a>
+                        <a href="#" class="nav-link" data-page="statistics">Statistics</a>
+                        <a href="#" class="nav-link" data-page="emergency">Emergency</a>
+                        <a href="#" class="nav-link" data-page="information">Information</a>
+                    </nav>        
+                </div>
+
+                <div class="emergency-content">
+                    <h1 class="emergency-title">Emergency</h1>            
+                    <p class="emergency-subtitle">LGU's Live Monitoring</p>
+
+                    <div class="emergency-selector">
+                        <select class="emergency-dropdown">
+                            <option value="Select">--Select--</option>
+                            <option value="Natural Disasters">Natural Disasters</option>
+                            <option value="Fire Emergencies">Fire Emergencies</option>
+                            <option value="Medical & Health Emergencies">Medical & Health Emergencies</option>
+                            <option value="Peace and Order / Security">Peace and Order / Security</option>
+                            <option value="Technological & Environmental">Technological & Environmental</option>
+                        </select>            
+                    </div>
+
+                    <div class="emergency-board">
+                        <!-- DITO NAGBABAGO CONTENT -->
+                        <div id="emergency-content-box">
+                            <div class="default-message">
+                                <h2>Select an Emergency Type</h2>
+                                <p>Please choose an emergency category to start reporting.</p>
+                            </div>            
+                        </div>
+
+                        <!-- FIXED BUTTON -->
+                        <button class="report-btn">Report</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Page: Information -->
+        <div class="page" id="page-information">
+            <div class="information-page">
+                <div class="header">
+                    <div class="menu-icon">
+                        <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+                            <path d="M1.75 11.75H31.75M1.75 1.75H31.75M1.75 21.75H31.75" stroke="#1E1E1E" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" transform="translate(4, 9)"/>
+                        </svg>
+                    </div>
+                    
+                    <div class="logo">
+                        <img src="munisipyo-removebg-preview.png" alt="Logo" onerror="this.style.display='none'">
+                    </div>
+                    
+                    <p class="header-title">LGU's Live Monitoring</p>
+                    
+                    <nav class="nav-menu">
+                        <a href="#" class="nav-link" data-page="home">Home</a>
+                        <a href="#" class="nav-link" data-page="about">About</a>
+                        <a href="#" class="nav-link" data-page="statistics">Statistics</a>
+                        <a href="#" class="nav-link" data-page="emergency">Emergency</a>
+                        <a href="#" class="nav-link" data-page="information">Information</a>
+                    </nav>
+                </div>
+
+                <div class="info-content">
+                    <h1 class="info-title">Information about LGU's</h1>
+                    <p class="info-subtitle">Monitoring Digital Adoption & Impact</p>
+
+                    <h2 class="info-heading">LGU's municipalities of malolos bulacan</h2>
+                    <p class="info-text">Malolos, as a component city in Bulacan, has a rich history and a diverse range of municipalities. Here are some of the key municipalities within Malolos:</p>
+
+                    <div class="barangay-list">
+                        <div class="barangay-item">
+                            <h3>Barangay Anilao:</h3>
+                            <p>Known for its historical significance and community activities.</p>
+                        </div>
+                        <div class="barangay-item">
+                            <h3>Barangay Atlag:</h3>
+                            <p>A peaceful community with a focus on local governance.</p>
+                        </div>
+                        <div class="barangay-item">
+                            <h3>Barangay Bagna:</h3>
+                            <p>Engaged in various community projects and initiatives.</p>
+                        </div>
+                        <div class="barangay-item">
+                            <h3>Barangay Bagong bayan:</h3>
+                            <p>A community that values its heritage and development.</p>
+                        </div>
+                        <div class="barangay-item">
+                            <h3>Barangay Balayong:</h3>
+                            <p>Known for its agriculture activities and community spirit.</p>
+                        </div>
+                    </div>
+
+                    <p class="info-footer">
+                        <a href="https://www.bing.com/ck/a?!&&p=c4aabb0f1105d9ab0912a9b56d269c8c4588781e4425a90962a6d9f0a08976beJmltdHM9MTc3NDEzNzYwMA&ptn=3&ver=2&hsh=4&fclid=3f2afacf-8ca5-688b-2283-ec818dad6901&u=a1aHR0cHM6Ly9idWxhY2FuLmdvdi5waC9jaXRpZXMtYW5kLW11bmljaXBhbGl0aWVzL2NpdHktb2YtbWFsb2xvcy8&ntb=1" target="_blank">
+                            These municipalities contribute to the vibrant and dynamic nature of Malolos, each with its own unique characteristics and contributions to the city's overall development.
+                        </a>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Page: Settings -->
+        <div class="page" id="page-settings">
+            <div class="settings-page">
+                <div class="header">
+                    <div class="menu-icon">
+                        <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+                            <path d="M1.75 11.75H31.75M1.75 1.75H31.75M1.75 21.75H31.75" stroke="#1E1E1E" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" transform="translate(4, 9)"/>
+                        </svg>
+                    </div>
+                    
+                    <div class="logo">
+                        <img src="https://raw.githubusercontent.com/figma/code-connect/main/examples/react/src/imports/munisipyo-removebg-preview.png" alt="Logo" onerror="this.style.display='none'">
+                    </div>
+                    
+                    <p class="header-title">LGU's Live Monitoring</p>
+                    
+                    <nav class="nav-menu">
+                        <a href="#" class="nav-link" data-page="home">Home</a>
+                        <a href="#" class="nav-link" data-page="about">About</a>
+                        <a href="#" class="nav-link" data-page="statistics">Statistics</a>
+                        <a href="#" class="nav-link" data-page="emergency">Emergency</a>
+                        <a href="#" class="nav-link" data-page="information">Information</a>
+                    </nav>
+                </div>
+
+                <div class="settings-content">
+                    <h1>Settings</h1>
+                    <p>Settings page - Coming soon!</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="lgu.js"></script>
+</body>
+</html>
